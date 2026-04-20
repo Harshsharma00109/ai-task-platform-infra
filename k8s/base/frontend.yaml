@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: frontend
   namespace: neuralq
-  labels:
-    app: frontend
 spec:
   replicas: 1
   selector:
@@ -17,8 +15,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: ghcr.io/harshsharma00109/neuralq-frontend:latest
-          imagePullPolicy: Always
+          image: nginx:alpine
           ports:
             - containerPort: 80
           resources:
@@ -30,15 +27,15 @@ spec:
               memory: "128Mi"
           livenessProbe:
             httpGet:
-              path: /healthz
+              path: /
               port: 80
-            initialDelaySeconds: 15
+            initialDelaySeconds: 10
             periodSeconds: 20
           readinessProbe:
             httpGet:
-              path: /healthz
+              path: /
               port: 80
-            initialDelaySeconds: 10
+            initialDelaySeconds: 5
             periodSeconds: 10
 ---
 apiVersion: v1
