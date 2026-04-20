@@ -12,8 +12,8 @@ patchesStrategicMerge:
 
 images:
   - name: ghcr.io/YOUR_ORG/neuralq-backend
-    newTag: "BACKEND_IMAGE_TAG"   # replaced by CI/CD
+    newTag: "3507a480"   # replaced by CI/CD
   - name: ghcr.io/YOUR_ORG/neuralq-worker
-    newTag: "WORKER_IMAGE_TAG"
+    newTag: "3507a480"
   - name: ghcr.io/YOUR_ORG/neuralq-frontend
-    newTag: "FRONTEND_IMAGE_TAG"
+    newTag: "3507a480"
