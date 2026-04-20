@@ -4,16 +4,17 @@ kind: Kustomization
 bases:
   - ../../base
 
-namespace: neuralq
+namespace: neuralq-staging
 
 patchesStrategicMerge:
   - backend-patch.yaml
   - worker-patch.yaml
 
+# Staging uses lower resource limits and fewer replicas
 images:
   - name: ghcr.io/YOUR_ORG/neuralq-backend
-    newTag: "BACKEND_IMAGE_TAG"   # replaced by CI/CD
+    newTag: "develop-latest"
   - name: ghcr.io/YOUR_ORG/neuralq-worker
-    newTag: "WORKER_IMAGE_TAG"
+    newTag: "develop-latest"
   - name: ghcr.io/YOUR_ORG/neuralq-frontend
-    newTag: "FRONTEND_IMAGE_TAG"
+    newTag: "develop-latest"
