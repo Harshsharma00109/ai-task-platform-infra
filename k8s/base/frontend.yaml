@@ -25,7 +25,7 @@ spec:
         runAsUser: 1001
       containers:
         - name: frontend
-          image: ghcr.io/YOUR_ORG/neuralq-frontend:latest   # updated by CI
+           image: ghcr.io/harshsharma00109/neuralq-frontend:latest   # updated by CI
           imagePullPolicy: Always
           ports:
             - containerPort: 80
