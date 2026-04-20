@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: backend
   namespace: neuralq
-  labels:
-    app: backend
 spec:
   replicas: 1
   selector:
